@@ -1,0 +1,493 @@
+{
+  "consumer": {
+    "name": "SDK"
+  },
+  "provider": {
+    "name": "JaegerService"
+  },
+  "interactions": [
+    {
+      "description": "get ads response from the Jaeger service",
+      "providerState": "Test to request ads with a valid pub app",
+      "request": {
+        "method": "post",
+        "path": "/api/v5/ads",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "cache-control": "no-cache",
+          "user-agent": "Vungle/6.11.0",
+          "X-Forwarded-For": "45.117.100.153",
+          "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
+          "X-VUNGLE-LANGUAGE": "ru",
+          "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
+          "Vungle-Version": "5.8",
+          "X-Vungle-RTB-ID": "5fd21d91c80cb9051249a6b1"
+        },
+        "body": {
+          "app": {
+            "id": "59786bc2a43b3a08620026b1",
+            "bundle": "com.vungle.ios-sdk-app.qa",
+            "ver": "1.0.9"
+          },
+          "system": {
+            "cache": [
+
+            ]
+          },
+          "device": {
+            "make": "Apple",
+            "os": "ios",
+            "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "h": 1792,
+            "w": 828,
+            "model": "iPhone11,8",
+            "osv": "13",
+            "ext": {
+              "vungle": {
+                "ios": {
+                  "volume": 0.5625,
+                  "battery_state": "unplugged",
+                  "idfa": "",
+                  "vduid": "",
+                  "battery_level": 0.5400000214576723,
+                  "locale": "en_US",
+                  "connection_type": "wifi",
+                  "language": "en-US",
+                  "storage_bytes_available": 9223372036854775807,
+                  "idfv": "",
+                  "battery_saver_enabled": 1,
+                  "time_zone": "America/Los_Angeles",
+                  "sound_enabled": 0
+                }
+              }
+            },
+            "carrier": "T-Mobile",
+            "ifa": "NNSYAWYKPVE48E4Z7WA2SD1LH9YVVB48IF36",
+            "lmt": 0
+          },
+          "ext": {
+          },
+          "request": {
+            "placements": [
+              "DEFAULT02021"
+            ],
+            "skadnetwork": {
+              "matched_adnetwork_ids": [
+
+              ]
+            }
+          },
+          "user": {
+          },
+          "badv": [
+            "glu.com"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "ads": [
+            {
+              "placement_reference_id": "DEFAULT02021",
+              "ad_markup": {
+                "id": "6230bec1686f74dd442821ec",
+                "campaign": "591007e887faec9f44000018|574351a9740cf4426b30d030|dsp-60a2773fb3bbef2c0884d8bb|6230bec1686f74dd442821ec",
+                "app_id": "$0${\"app_id\":\"5727cbb4630ae51d400000cf\",\"eventID\":\"6230bec1686f74dd442821ec\"}",
+                "expiry": 1647365329,
+                "tpat": {
+                  "moat": {
+                    "is_enabled": false,
+                    "extra_vast": ""
+                  },
+                  "video.clickCoordinates": [
+                    "https://c2.gdt.qq.com/gdt_mclick.fcg?viewid=!s6A4zH!POBbWj7ZQJudpxTBaTzOitZ8Zrj2cUWt!HRqifXlxVXVFYsSbE41QXp8NkVBskWi5Xu3It3wZDq05WhMsgfMLVxU41AQqVoe3wHYs6zZtEO_OtSDOHBiIm_Jn3xRWbR93zoDNI2kpylT7ltMreMCvonlVZ2Br0DCTf8SQOYklg8NNwTiMJCaTcC4xb7pIVEr5A5nkmccS3H9UpiMiJTk3eT_Yn57f4UxnMy9cxrAgVDosJFLJ6rXP6tZHCWVS3kSr0l5iRK1V956hwoVlIAVZCLcI!!qfcKzeS548ctKsM2Ps6ip5M9Cpx60&jtype=0&i=1&os=2&acttype=1&s={\"req_width\":\"__REQ_WIDTH__\",\"req_height\":\"__REQ_HEIGHT__\",\"width\":\"__WIDTH__\",\"height\":\"__HEIGHT__\",\"down_x\":\"__DOWN_X__\",\"down_y\":\"__DOWN_Y__\",\"up_x\":\"__UP_X__\",\"up_y\":\"__UP_Y__\"}&lpp=click_ext=eyJleHBfcGFyYW0iOiJjYXJyaWVyX2VuYWJsZToyIn0=&clklpp=__CLICK_LPP__&nxjp=1&cdnxj=1&xp=1&tl=1",
+                    "http://link/to/customclick/2"
+                  ],
+                  "clickUrl": [
+                    "https://lf.snssdk.com/api/ad/union/redirect/?active_extra=dBAOZluLpbktg88y1awPD2bg7gF9T%2BF6SllwqYXihRKdbZEAoq9kCTbQPfHeGuWj21kYt5Qc63RSfRlL91A1hg%3D%3D&call_back=4OeszuGPR9JzWtROWbsgyFBgcUsU1ve3UPw17uco1n9ePHi0qf7oGq7vfSE%2FgprAZp9X%2BNwb8gPYCBIXAyRzow%3D%3D&click_source=1&extra=K%2FmpeEAU9gTcAOwvQsxpEXCQ0RSkek%2FS2SNNUe7hSz1Rl2DO0%2FTy2PAfb9FWkVKsPQzZvb6OJQUB1GzO1L66cb48QDsoKtHAjqfr0Yv468vCtJKCIIWbNqr4cSxdNJRdnIhG0Rq9roAyGBxUMcLJ%2FFPqn%2BEI3maAdb%2B5UsXPL05UsXkxhJrhiNR%2BUtw5D99v%2F553nJNfOQIhUPVUCX7ukh8Bz6bsA7LS2JNLhIcGUMTjKk40r9KIYmbHhRBeXnFBfHdkWpf6aEMtqeKTkeUCZlrh%2FRhPWJlVG3GW%2FhDdvXlYGcIT5XqmPjrHpTP1MPDrXZ4raX29Vw6eUkt98LsllUhQVoweCBlkcyHNmdEgyYY52w99mssEqM%2FpgaG%2B%2BiUBqu%2BDJiO1kcY%2FJtJMIyW%2Fg51GC8C9d%2B9Jc8frsb7Xw3deAyp5Ep5I1fgXPZFM7wPzUu%2ByA4OhQa%2BkmY6EbvTqXqgCckW774o44v51I1Xh4mcaehI5klVYi14PBEYJabir4wU%2FgEoObr9IalC2lNHys8VIB3pZjCbQPQue3xnmyFAkJbTpzK%2FpXRuoH9ofbr50tAYRBIWMIWjMugZk7quJtS%2FwrnvRQfiaQKHWis4uNJ6WFEs5bz2nKETUZeid7zKEpbs4xQ4GXwe%2Bbx9qOx1IBv6ud6fF7dJnCQIPo0pXUmkt7c98DxDeglFltD2KRt3Q0F3wpWbK8wst5E42%2FMpvaBWtv4v9HMsAAE6kdKfKblBFHDeY66C3LdW37yWyA1Egk%2F%2FSpxv%2Fzrik2WCBCjCJPSWnHrUf8vlrZ4fK%2BpNNisrBHUCcyYcJ%2FrX2bvWI3I2NZp9X%2BNwb8gPYCBIXAyRzow%3D%3D&is_dsp=1&pack_time=1590630440.65&req_id=5ec796d603e1e7c01267c88fu8791&rit=920685236&source_type=1&use_pb=1",
+                    "https://c2.gdt.qq.com/gdt_mclick.fcg?viewid=!s6A4zH!POBbWj7ZQJudpxTBaTzOitZ8Zrj2cUWt!HRqifXlxVXVFYsSbE41QXp8NkVBskWi5Xu3It3wZDq05WhMsgfMLVxU41AQqVoe3wHYs6zZtEO_OtSDOHBiIm_Jn3xRWbR93zoDNI2kpylT7ltMreMCvonlVZ2Br0DCTf8SQOYklg8NNwTiMJCaTcC4xb7pIVEr5A5nkmccS3H9UpiMiJTk3eT_Yn57f4UxnMy9cxrAgVDosJFLJ6rXP6tZHCWVS3kSr0l5iRK1V956hwoVlIAVZCLcI!!qfcKzeS548ctKsM2Ps6ip5M9Cpx60&jtype=0&i=1&os=2&acttype=1&s={\"req_width\":\"__REQ_WIDTH__\",\"req_height\":\"__REQ_HEIGHT__\",\"width\":\"__WIDTH__\",\"height\":\"__HEIGHT__\",\"down_x\":\"__DOWN_X__\",\"down_y\":\"__DOWN_Y__\",\"up_x\":\"__UP_X__\",\"up_y\":\"__UP_Y__\"}&lpp=click_ext=eyJleHBfcGFyYW0iOiJjYXJyaWVyX2VuYWJsZToyIn0=&clklpp=__CLICK_LPP__&nxjp=1&cdnxj=1&xp=1&tl=1",
+                    "http://link/to/customclick/2",
+                    "http://link/to/customclick/3",
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=click&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "checkpoint.0": [
+                    "https://lf.snssdk.com/api/ad/union/show_event/?req_id=5ec796d603e1e7c01267c88fu8791&extra=4AfhtQRp22DGOBvA5zI0lS%2FcT%2Bw9JJgawOAhIgmdGSHq9mhg2WowlxaVMCnpX9aEnCvZlJ%2F4XnX9Y3ft9EE3jGL6S2ry5oiX6rZbqXq0sxJUwk6QzU%2B01i3d7ImYEWp6enFEt09MtFFv7b48W%2FZZvC%2BTQVUys9SLkZnSUnYc6Q5CX7dTPTqNbxlIs9nqK1F0KLvOxM8q%2Bm1Gz900kSWp4GY%2Fz1AO7%2Bhn43CSs46qVMvHQ5qlcUHNwDBVEqvR%2BZMvsoAwtPPCEEtn1bsriy4PSRosSNLnm5t2jwE%2FnBnj0SlvoC66lIy28a6hdhzOy4LIKGaiuXVujp6TxDzCdjpA7X1Szd%2FrjdCgbfI%2BLcYoeol23e%2BBmoUgqX%2FH%2F7WphfNoIJSQSOnGyTHlCY6H1w2t1E3sg51A4D3JWIVLB2WYzF448pt09nqylG1mJuc6HKOlKdmaXQsLMnmKHg9gVPU5nCTYzRFKx95hlxv%2BexR%2FwUWA%2FFAoOIKyfLDu%2BD6jnvnQ0%2FQKX8EkYvroCF8vbwYCC00trnzQxrzwYJLwPQirebVH7Oahrqz9GC0AWA9eA97aF%2BP4luLedTXeRXiOaV2Z9Ve%2FUiPgVId9oybFaJRbfTHpqGdCCqHmVYhy%2FEsO5Cc%2BQUqd%2FkRSRiqMTFCGbldY2yDqSZw64N8nuy8Q96AyqFxx8c6WzQYgrnl3hNW0h4z9xcGUrpHYMZ77Ur3slw9NZ0bKa57Vabhdr1x5OYeiS7vIzRDpCAbpuj6DfmvWMLp348CcYnwzWuKpXMO3dVopSQ5g9mhqW%2BFMNVwkq1Am9qT1qrLfa%2B1dQEw%2Fy0wIRDiehbfWn6k2HjSptp3j%2BzS4WKomHeWEC4bVofpOKx4hEF73kGEvxzfPjo%2FvM4xTiuH8Fw%2Ftwx3xR%2BCjABzmEmzPMsoGOGdHiGnkYWYekOUmFS8h%2Fi8Jw2JqzHfZF8f%2F2K1dh1jvULJ4N43QBPb4lsbmYS4T6K65SKkJmjYlq4eaFeXjKk40r9KIYmbHhRBeXnFBvc%2FXLPIReEDDLC9HXmnll%2FdgY3JD1e8RBDzUgdF7cRmJDlocZqnJEOFEoT9LO1JpiU4hH7xEXEFul4Z6EgM97YXTfqEBYeQ%2FftyIee07L%2Fo%2Fx0nUdi1El42uLyPyvwzVbzHFeUBprI1M0Svxq1KERKrTVQz%2Fxmxx4YkPhOeU2CmA9cv8IUhsaf%2F%2FCw%2F%2Fv2wwjcZeJG4gdeHp9CfteShvQokMKtq3clCiTf4WkYf9AcgobPOxy6bXQku9aycXoVNKtl%2F4cM9rOe25AwjBFkatpfkUTiOjQVLf5d1me2eUYIU%2FXr1Il4xn%2BbVtahT304xf%2Fy1fQG828mpapX2vSds2dALGa2AFXntrk3%2Bm2KiYKKDSE6MNcn7X80JUWKAcOOZpejPrOYSTo6BN%2BIbvC%2FxTLmn153zkkVvEiaIVVMqwU2aPZX%2FY2PHOkIz9hhSm%2FhQ2%2FDLbizMKEoQ3avvhlz%2B6dP8UlCXQILjqQuoO2sZf80pwEwsBYFAvB2DKRAJzYSsBoTLrjmM4ynP9duq4LGtpakfqjnJdlElsER%2FnWwYQV9OIi3RZPF2EHyjj%2BH7IcqxOAzvK1kyqoC7W8fAWeeDoEvegnTtRwDuzHuP1LsAkQZxB0REPYa0Q%2BP0sn4zipSJv7UHerEHdxSqegawjnqP33o8BrARxatwd1FccDPXVQ%2BARDyQspfmJDFTyw6b%2Fh%2FngyQUsdA8bqAO1Wilg7XdenuaXkNJlXHQaP4bDNS9Q0F94HZiLSmS6OBhgV3IQm79XYxX5%2BlCA%2BEC%2FU%2F6Ec94hNWafV%2FjcG%2FID2AgSFwMkc6M%3D&source_type=1&pack_time=1590630440.65&pc=OMkaunPpDyKzZarhJKk3BmafV%2FjcG%2FID2AgSFwMkc6M%3D&ttdsp_price=98.000000000",
+                    "https://is.snssdk.com/api/ad/union/event_report/?event_type=4&extra=4AfhtQRp22DGOBvA5zI0lS%2FcT%2Bw9JJgawOAhIgmdGSHq9mhg2WowlxaVMCnpX9aEnCvZlJ%2F4XnX9Y3ft9EE3jGL6S2ry5oiX6rZbqXq0sxJUwk6QzU%2B01i3d7ImYEWp6enFEt09MtFFv7b48W%2FZZvC%2BTQVUys9SLkZnSUnYc6Q5CX7dTPTqNbxlIs9nqK1F0KLvOxM8q%2Bm1Gz900kSWp4GY%2Fz1AO7%2Bhn43CSs46qVMvHQ5qlcUHNwDBVEqvR%2BZMvsoAwtPPCEEtn1bsriy4PSRosSNLnm5t2jwE%2FnBnj0SlvoC66lIy28a6hdhzOy4LIKGaiuXVujp6TxDzCdjpA7X1Szd%2FrjdCgbfI%2BLcYoeol23e%2BBmoUgqX%2FH%2F7WphfNoIJSQSOnGyTHlCY6H1w2t1E3sg51A4D3JWIVLB2WYzF448pt09nqylG1mJuc6HKOlKdmaXQsLMnmKHg9gVPU5nCTYzRFKx95hlxv%2BexR%2FwUWA%2FFAoOIKyfLDu%2BD6jnvnQ0%2FQKX8EkYvroCF8vbwYCC00trnzQxrzwYJLwPQirebVH7Oahrqz9GC0AWA9eA97aF%2BP4luLedTXeRXiOaV2Z9Ve%2FUiPgVId9oybFaJRbfTHpqGdCCqHmVYhy%2FEsO5Cc%2BQUqd%2FkRSRiqMTFCGbldY2yDqSZw64N8nuy8Q96AyqFxx8c6WzQYgrnl3hNW0h4z9xcGUrpHYMZ77Ur3slw9NZ0bKa57Vabhdr1x5OYeiS7vIzRDpCAbpuj6DfmvWMLp348CcYnwzWuKpXMO3dVopSQ5g9mhqW%2BFMNVwkq1Am9qT1qrLfa%2B1dQEw%2Fy0wIRDiehbfWn6k2HjSptp3j%2BzS4WKomHeWEC4bVofpOKx4hEF73kGEvxzfPjo%2FvM4xTiuH8Fw%2Ftwx3xR%2BCjABzmEmzPMsoGOGdHiGnkYWYekOUmFS8h%2Fi8Jw2JqzHfZF8f%2F2K1dh1jvULJ4N43QBPb4lsbmYS4T6K65SKkJmjYlq4eaFeXjKk40r9KIYmbHhRBeXnFBvc%2FXLPIReEDDLC9HXmnll%2FdgY3JD1e8RBDzUgdF7cRmJDlocZqnJEOFEoT9LO1JpiU4hH7xEXEFul4Z6EgM97YXTfqEBYeQ%2FftyIee07L%2Fo%2Fx0nUdi1El42uLyPyvwzVbzHFeUBprI1M0Svxq1KERKrTVQz%2Fxmxx4YkPhOeU2CmA9cv8IUhsaf%2F%2FCw%2F%2Fv2wwjcZeJG4gdeHp9CfteShvQokMKtq3clCiTf4WkYf9AcgobPOxy6bXQku9aycXoVNKtl%2F4cM9rOe25AwjBFkatpfkUTiOjQVLf5d1me2eUYIU%2FXr1Il4xn%2BbVtahT304xf%2Fy1fQG828mpapX2vSds2dALGa2AFXntrk3%2Bm2KiYKKDSE6MNcn7X80JUWKAcOOZpejPrOYSTo6BN%2BIbvC%2FxTLmn153zkkVvEiaIVVMqwU2aPZX%2FY2PHOkIz9hhSm%2FhQ2%2FDLbizMKEoQ3avvhlz%2B6dP8UlCXQILjqQuoO2sZf80pwEwsBYFAvB2DKRAJzYSsBoTLrjmM4ynP9duq4LGtpakfqjnJdlElsER%2FnWwYQV9OIi3RZPF2EHyjj%2BH7IcqxOAzvK1kyqoC7W8fAWeeDoEvegnTtRwDuzHuP1LsAkQZxB0REPYa0Q%2BP0sn4zipSJv7UHerEHdxSqegawjnqP33o8BrARxatwd1FccDPXVQ%2BARDyQspfmJDFTyw6b%2Fh%2FngyQUsdA8bqAO1Wilg7XdenuaXkNJlXHQaP4bDNS9Q0F94HZiLSmS6OBhgV3IQm79XYxX5%2BlCA%2BEC%2FU%2F6Ec94hNWafV%2FjcG%2FID2AgSFwMkc6M%3D&video_play_time=0",
+                    "http://app05.adfalcon.com/E/78c1743833b34d43991083f92bd5b392_0_b338d452-96f4-4d37-b6e1-d10de8271ff4?ev=creativeview",
+                    "https://us-event.app-install.bid/rtb/impr?id=123",
+                    "https://us-event.app-install.bid/rtb/impr?id=YnRyAgMAAAF6dACeAwAGRREAAAAwHZlv1LjyQ6eKNFvVILh75gACdXMB&price=98.000000000",
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=start&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "checkpoint.25": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=firstQuartile&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "checkpoint.50": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=midpoint&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "checkpoint.75": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=thirdQuartile&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "checkpoint.100": [
+                    "https://is.snssdk.com/api/ad/union/event_report/?event_type=6&extra=4AfhtQRp22DGOBvA5zI0lS%2FcT%2Bw9JJgawOAhIgmdGSHq9mhg2WowlxaVMCnpX9aEnCvZlJ%2F4XnX9Y3ft9EE3jGL6S2ry5oiX6rZbqXq0sxJUwk6QzU%2B01i3d7ImYEWp6enFEt09MtFFv7b48W%2FZZvC%2BTQVUys9SLkZnSUnYc6Q5CX7dTPTqNbxlIs9nqK1F0KLvOxM8q%2Bm1Gz900kSWp4GY%2Fz1AO7%2Bhn43CSs46qVMvHQ5qlcUHNwDBVEqvR%2BZMvsoAwtPPCEEtn1bsriy4PSRosSNLnm5t2jwE%2FnBnj0SlvoC66lIy28a6hdhzOy4LIKGaiuXVujp6TxDzCdjpA7X1Szd%2FrjdCgbfI%2BLcYoeol23e%2BBmoUgqX%2FH%2F7WphfNoIJSQSOnGyTHlCY6H1w2t1E3sg51A4D3JWIVLB2WYzF448pt09nqylG1mJuc6HKOlKdmaXQsLMnmKHg9gVPU5nCTYzRFKx95hlxv%2BexR%2FwUWA%2FFAoOIKyfLDu%2BD6jnvnQ0%2FQKX8EkYvroCF8vbwYCC00trnzQxrzwYJLwPQirebVH7Oahrqz9GC0AWA9eA97aF%2BP4luLedTXeRXiOaV2Z9Ve%2FUiPgVId9oybFaJRbfTHpqGdCCqHmVYhy%2FEsO5Cc%2BQUqd%2FkRSRiqMTFCGbldY2yDqSZw64N8nuy8Q96AyqFxx8c6WzQYgrnl3hNW0h4z9xcGUrpHYMZ77Ur3slw9NZ0bKa57Vabhdr1x5OYeiS7vIzRDpCAbpuj6DfmvWMLp348CcYnwzWuKpXMO3dVopSQ5g9mhqW%2BFMNVwkq1Am9qT1qrLfa%2B1dQEw%2Fy0wIRDiehbfWn6k2HjSptp3j%2BzS4WKomHeWEC4bVofpOKx4hEF73kGEvxzfPjo%2FvM4xTiuH8Fw%2Ftwx3xR%2BCjABzmEmzPMsoGOGdHiGnkYWYekOUmFS8h%2Fi8Jw2JqzHfZF8f%2F2K1dh1jvULJ4N43QBPb4lsbmYS4T6K65SKkJmjYlq4eaFeXjKk40r9KIYmbHhRBeXnFBvc%2FXLPIReEDDLC9HXmnll%2FdgY3JD1e8RBDzUgdF7cRmJDlocZqnJEOFEoT9LO1JpiU4hH7xEXEFul4Z6EgM97YXTfqEBYeQ%2FftyIee07L%2Fo%2Fx0nUdi1El42uLyPyvwzVbzHFeUBprI1M0Svxq1KERKrTVQz%2Fxmxx4YkPhOeU2CmA9cv8IUhsaf%2F%2FCw%2F%2Fv2wwjcZeJG4gdeHp9CfteShvQokMKtq3clCiTf4WkYf9AcgobPOxy6bXQku9aycXoVNKtl%2F4cM9rOe25AwjBFkatpfkUTiOjQVLf5d1me2eUYIU%2FXr1Il4xn%2BbVtahT304xf%2Fy1fQG828mpapX2vSds2dALGa2AFXntrk3%2Bm2KiYKKDSE6MNcn7X80JUWKAcOOZpejPrOYSTo6BN%2BIbvC%2FxTLmn153zkkVvEiaIVVMqwU2aPZX%2FY2PHOkIz9hhSm%2FhQ2%2FDLbizMKEoQ3avvhlz%2B6dP8UlCXQILjqQuoO2sZf80pwEwsBYFAvB2DKRAJzYSsBoTLrjmM4ynP9duq4LGtpakfqjnJdlElsER%2FnWwYQV9OIi3RZPF2EHyjj%2BH7IcqxOAzvK1kyqoC7W8fAWeeDoEvegnTtRwDuzHuP1LsAkQZxB0REPYa0Q%2BP0sn4zipSJv7UHerEHdxSqegawjnqP33o8BrARxatwd1FccDPXVQ%2BARDyQspfmJDFTyw6b%2Fh%2FngyQUsdA8bqAO1Wilg7XdenuaXkNJlXHQaP4bDNS9Q0F94HZiLSmS6OBhgV3IQm79XYxX5%2BlCA%2BEC%2FU%2F6Ec94hNWafV%2FjcG%2FID2AgSFwMkc6M%3D&video_play_time=27",
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=complete&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "postroll.view": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=endCardView&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "video.close": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=videoClose&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "video.unmute": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=unmute&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ],
+                  "video.mute": [
+                    "https://events.api.vungle.com/api/v5/tpat?cid=591007e887faec9f44000018&crid=574351a9740cf4426b30d030&event_id=6230bec1686f74dd442821ec&event_type=mute&hb=True&ic=True&int=False&os=iOS&pid=59786bc2a43b3a0862002774&pub=59786bc2a43b3a08620026b1&test=False&vid=4423DD36-2738-46DC-84D1-02A47F95320D1&vid_type=IFA"
+                  ]
+                },
+                "delay": 0,
+                "showClose": 5,
+                "showCloseIncentivized": 5,
+                "countdown": 5,
+                "url": "",
+                "videoWidth": 0,
+                "videoHeight": 0,
+                "cta_overlay": {
+                  "enabled": true,
+                  "show_onclick": false,
+                  "time_enabled": 0,
+                  "time_show": 4,
+                  "click_area": 1
+                },
+                "callToActionUrl": "https://apps.apple.com/app/idbundleid",
+                "deeplinkUrl": "zalora://my//seg_s/m/",
+                "adType": "vungle_mraid",
+                "templateURL": "https://vungle2-cdn-qa.s3.amazonaws.com/template-rtb/rtbVideo.zip",
+                "templateSettings": {
+                  "normal_replacements": {
+                    "CTA_BUTTON_BACKGROUND": "#01b27a",
+                    "INCENTIVIZED_BODY_TEXT": "Are you sure you want to skip this ad? You must finish watching to claim your reward.",
+                    "INCENTIVIZED_CLOSE_TEXT": "Close",
+                    "VUNGLE_PRIVACY_URL": "https://vungle.com/privacy/",
+                    "INCENTIVIZED_CONTINUE_TEXT": "Continue",
+                    "APP_STORE_ID": "bundleid",
+                    "VIDEO_SHOW_CTA": "True",
+                    "CTA_BUTTON_URL": "https://apps.apple.com/app/idbundleid",
+                    "SK_CTA_ONLY": "off",
+                    "SK_SKDT": "default",
+                    "PRIVACY_CLOSE_TEXT": "Read Vungle's Privacy Policy",
+                    "SK_ASOI_COMPLETE": "overlay_view",
+                    "FULL_CTA": "False",
+                    "INCENTIVIZED_TITLE_TEXT": "Close this ad?",
+                    "PRIVACY_CONTINUE_TEXT": "Close",
+                    "INCENTIVIZED_CLOSE_BUTTON_DELAY_SECONDS": "9999",
+                    "SHOW_CLOSE_BUTTON_COUNTDOWN": "True",
+                    "FULL_CTA_OPTION": "fsc_off",
+                    "PRIVACY_BODY_TEXT": "Vungle, Inc. understands the importance of privacy. Vungle operates a mobile ad network (the 'Ad Network' or the 'Services') through which Vungle displays targeted, contextual ads.",
+                    "OM_SDK_DATA": "eyJwYXJhbXMiOiJcbiAgICAgICAgICAgICAgICAgICAgICAgIHtcIm1vYXRDbGllbnRMZXZlbDFcIjpcIjU3MjdjYmI0NjMwYWU1MWQ0MDAwMDBjZlwiLFwibW9hdENsaWVudExldmVsMlwiOlwiNTkxMDA3ZTg4N2ZhZWM5ZjQ0MDAwMDE4XCIsXCJtb2F0Q2xpZW50TGV2ZWwzXCI6XCI1NzQzNTFhOTc0MGNmNDQyNmIzMGQwMzBcIixcIm1vYXRDbGllbnRMZXZlbDRcIjpcIkRFRkFVTFQwMjAyMVwiLFwibW9hdENsaWVudFNsaWNlcjFcIjpcIjU5Nzg2YmMyYTQzYjNhMDg2MjAwMjZiMVwiLFwibW9hdENsaWVudExldmVsNVwiOlwiXCIsXCJtb2F0Q2xpZW50TGV2ZWw2XCI6XCI2MGEyNzczZmIzYmJlZjJjMDg4NGQ4YmJcIn1cbiAgICAgICAgICAgICAgICAgICAgICIsInZlbmRvcktleSI6Im1vYXQuY29tLW9tc2RrdnVuZ2xlaW5hcHB2aWRlbzc4MTk0MzQ5NDQzMSIsInZlbmRvclVSTCI6IlxuICAgICAgICAgICAgICAgICAgICAgICAgaHR0cHM6Ly96Lm1vYXRhZHMuY29tL29tc2RrdnVuZ2xlaW5hcHB2aWRlbzc4MTk0MzQ5NDQzMS9tb2F0dmlkZW8uanNcbiAgICAgICAgICAgICAgICAgICAgICJ9",
+                    "SK_ASOI_AGGRESSIVE": "product_view",
+                    "DOWNLOAD_BUTTON_DELAY_SECONDS": "4",
+                    "START_MUTED": "False",
+                    "SK_FSC": "default",
+                    "ACTION_TRACKING": "False",
+                    "AUTO_LOCALIZE": "True",
+                    "VIDEO_PROGRESS_BAR": "True",
+                    "ASOI_SETTINGS": "aggressive"
+                  },
+                  "cacheable_replacements": {
+                    "MAIN_VIDEO": {
+                      "url": "https://cdn-cn.vungle.cn/zen/497a5dead8498d62d7c65967729639f7-1280x720-Q2.mp4",
+                      "extension": "mp4"
+                    }
+                  }
+                },
+                "templateId": "528008e887faec9f4400007d",
+                "template_type": "fullscreen",
+                "ad_market_id": "bundleid",
+                "ad_token": "eyJjYW1wYWlnbiI6IjU5MTAwN2U4ODdmYWVjOWY0NDAwMDAxOHw1NzQzNTFhOTc0MGNmNDQyNmIzMGQwMzB8ZHNwLTYwYTI3NzNmYjNiYmVmMmMwODg0ZDhiYnw2MjMwYmVjMTY4NmY3NGRkNDQyODIxZWMifQ==",
+                "requires_sideloading": false,
+                "click_coordinates_enabled": true,
+                "bid_token": "2|mkRNdw==|c8obtg9v4gpfbu1o5tlg",
+                "viewability": {
+                  "om": {
+                    "is_enabled": true,
+                    "extra_vast": ""
+                  }
+                },
+                "attribution": {
+                  "method": "skadnetwork",
+                  "skadnetwork": {
+                    "version": "2.2",
+                    "storekit": {
+                      "fidelity_type": 1,
+                      "version": "2.3",
+                      "ad_network_id": "cDkw7geQsH.skadnetwork",
+                      "source_app_id": 123456789,
+                      "itunes_item_id": 880047117,
+                      "signature": "MEQCIEQlmZRNfYzKa",
+                      "campaign_id": 45,
+                      "nonce": "473b1a16-b4ef-43ad-9591-fcf3aefa82a7",
+                      "timestamp": 1594406341
+                    },
+                    "viewthrough": {
+                      "ad_type": "type",
+                      "ad_description": "desc",
+                      "ad_purchaser_name": "purchaser",
+                      "fidelity_type": 0,
+                      "version": "2.4",
+                      "ad_network_id": "cDkw7geQsH.skadnetwork",
+                      "source_app_id": 123456789,
+                      "itunes_item_id": 880047117,
+                      "signature": "MEQCIEQlmZRNfYzKa",
+                      "campaign_id": 45,
+                      "nonce": "473b1a16-b4ef-43ad-9591-fcf3aefa82a7",
+                      "timestamp": 1594406341
+                    }
+                  }
+                },
+                "timestamp": 1647361729
+              }
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "get ads response from the Jaeger service",
+      "providerState": "Test to get the config with a non-existing pub app",
+      "request": {
+        "method": "post",
+        "path": "/api/v5/ads",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "cache-control": "no-cache",
+          "user-agent": "Vungle/6.11.0",
+          "X-Forwarded-For": "45.117.100.153",
+          "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
+          "X-VUNGLE-LANGUAGE": "ru",
+          "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
+          "Vungle-Version": "5.8",
+          "X-Vungle-RTB-ID": "5fd21d91c80cb9051249a6b1"
+        },
+        "body": {
+          "app": {
+            "id": "123456",
+            "bundle": "com.vungle.ios-sdk-app.qa",
+            "ver": "1.0.9"
+          },
+          "system": {
+            "cache": [
+
+            ]
+          },
+          "device": {
+            "make": "Apple",
+            "os": "ios",
+            "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "h": 1792,
+            "w": 828,
+            "model": "iPhone11,8",
+            "osv": "13",
+            "ext": {
+              "vungle": {
+                "ios": {
+                  "volume": 0.5625,
+                  "battery_state": "unplugged",
+                  "idfa": "",
+                  "vduid": "",
+                  "battery_level": 0.5400000214576723,
+                  "locale": "en_US",
+                  "connection_type": "wifi",
+                  "language": "en-US",
+                  "storage_bytes_available": 9223372036854775807,
+                  "idfv": "",
+                  "battery_saver_enabled": 1,
+                  "time_zone": "America/Los_Angeles",
+                  "sound_enabled": 0
+                }
+              }
+            },
+            "carrier": "T-Mobile",
+            "ifa": "NNSYAWYKPVE48E4Z7WA2SD1LH9YVVB48IF36",
+            "lmt": 0
+          },
+          "ext": {
+          },
+          "request": {
+            "placements": [
+              "DEFAULT02021"
+            ],
+            "skadnetwork": {
+              "matched_adnetwork_ids": [
+
+              ]
+            }
+          },
+          "user": {
+          },
+          "badv": [
+            "glu.com"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "ads": [
+            {
+              "placement_reference_id": "DEFAULT02021",
+              "ad_markup": {
+                "id": "",
+                "campaign": null,
+                "app_id": null,
+                "sleep": 901,
+                "info": "publisher not found",
+                "delay": 0,
+                "showClose": 0,
+                "showCloseIncentivized": 0,
+                "countdown": 0,
+                "url": "",
+                "videoWidth": 0,
+                "videoHeight": 0,
+                "requires_sideloading": false
+              }
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "get ads response from the Jaeger service",
+      "providerState": "Test to get the config with a non-existing placement",
+      "request": {
+        "method": "post",
+        "path": "/api/v5/ads",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "cache-control": "no-cache",
+          "user-agent": "Vungle/6.11.0",
+          "X-Forwarded-For": "45.117.100.153",
+          "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
+          "X-VUNGLE-LANGUAGE": "ru",
+          "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
+          "Vungle-Version": "5.8",
+          "X-Vungle-RTB-ID": "5fd21d91c80cb9051249a6b1"
+        },
+        "body": {
+          "app": {
+            "id": "59786bc2a43b3a08620026b1",
+            "bundle": "com.vungle.ios-sdk-app.qa",
+            "ver": "1.0.9"
+          },
+          "system": {
+            "cache": [
+
+            ]
+          },
+          "device": {
+            "make": "Apple",
+            "os": "ios",
+            "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "h": 1792,
+            "w": 828,
+            "model": "iPhone11,8",
+            "osv": "13",
+            "ext": {
+              "vungle": {
+                "ios": {
+                  "volume": 0.5625,
+                  "battery_state": "unplugged",
+                  "idfa": "",
+                  "vduid": "",
+                  "battery_level": 0.5400000214576723,
+                  "locale": "en_US",
+                  "connection_type": "wifi",
+                  "language": "en-US",
+                  "storage_bytes_available": 9223372036854775807,
+                  "idfv": "",
+                  "battery_saver_enabled": 1,
+                  "time_zone": "America/Los_Angeles",
+                  "sound_enabled": 0
+                }
+              }
+            },
+            "carrier": "T-Mobile",
+            "ifa": "NNSYAWYKPVE48E4Z7WA2SD1LH9YVVB48IF36",
+            "lmt": 0
+          },
+          "ext": {
+          },
+          "request": {
+            "placements": [
+              "123465"
+            ],
+            "skadnetwork": {
+              "matched_adnetwork_ids": [
+
+              ]
+            }
+          },
+          "user": {
+          },
+          "badv": [
+            "glu.com"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "ads": [
+            {
+              "placement_reference_id": "DEFAULT02021",
+              "ad_markup": {
+                "id": "",
+                "campaign": null,
+                "app_id": null,
+                "sleep": 902,
+                "info": "placement not found",
+                "delay": 0,
+                "showClose": 0,
+                "showCloseIncentivized": 0,
+                "countdown": 0,
+                "url": "",
+                "videoWidth": 0,
+                "videoHeight": 0,
+                "requires_sideloading": false
+              }
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "consumer": {
+    "name": "SDK"
+  },
+  "provider": {
+    "name": "BastionService"
+  },
+  "interactions": [
+    {
+      "description": "get pub config from the Bastion service",
+      "providerState": "Test to get the config with a valid pub app",
+      "request": {
+        "method": "post",
+        "path": "/api/v5/config",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "cache-control": "no-cache",
+          "user-agent": "Vungle/6.11.0",
+          "X-Forwarded-For": "45.117.100.153",
+          "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
+          "X-VUNGLE-LANGUAGE": "ru",
+          "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
+          "Vungle-Version": "5.8"
+        },
+        "body": {
+          "app": {
+            "id": "59786bc2a43b3a08620026b4",
+            "bundle": "com.vungle.ios-sdk-app.qa",
+            "ver": "14f1cf7"
+          },
+          "system": {
+            "cache": [
+
+            ]
+          },
+          "device": {
+            "make": "Apple",
+            "os": "ios",
+            "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "h": 2688,
+            "model": "x86_64",
+            "osv": "12.4",
+            "ext": {
+              "vungle": {
+                "ios": {
+                  "volume": 0.6000000238418579,
+                  "battery_state": "unknown",
+                  "idfa": "4423DD36-2738-46DC-84D1-02A47F95320C",
+                  "vduid": "",
+                  "battery_level": -1,
+                  "locale": "en_US",
+                  "connection_type": "wifi",
+                  "language": "en",
+                  "storage_bytes_available": 228426878976,
+                  "idfv": "C8360A3F-81C3-4DC5-99FD-B5B28A161A6D",
+                  "battery_saver_enabled": 0,
+                  "time_zone": "Asia/Shanghai"
+                }
+              }
+            },
+            "carrier": "",
+            "ifa": "V9SHDTQ68ELAHLH7LEFWFWNE9RBZW0H5JJK0",
+            "w": 1242,
+            "lmt": 0
+          },
+          "ext": {
+          },
+          "request": {
+            "skadnetwork": {
+              "plist_adnetwork_ids": [
+
+              ]
+            }
+          },
+          "user": {
+            "gdpr": {
+              "consent_timestamp": 1565346845,
+              "consent_status": "opted_in",
+              "consent_message_version": "publisher_version_v1.0",
+              "consent_source": "publisher"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "endpoints": {
+            "new": "https://apiqa.vungle.com/api/v5/new",
+            "ads": "https://apiqa.vungle.com/api/v5/ads",
+            "will_play_ad": "https://apiqa.vungle.com/api/v5/will_play_ad",
+            "report_ad": "https://apiqa.vungle.com/api/v5/report_ad",
+            "log": "http://logs-apiqa.vungle.io/sdk",
+            "ri": "https://events-ext-qa.api.vungle.com/api/v5/ri",
+            "cache_bust": "https://events-ext-qa.api.vungle.com/api/v5/cache_bust",
+            "sdk_bi": "https://events-ext-qa.api.vungle.com/api/v5/sdk_bi"
+          },
+          "placements": [
+            {
+              "id": "5f68be4ed5ba35022aeace75",
+              "reference_id": "DEFAULT02024",
+              "is_auto_cached": true,
+              "is_incentivized": true,
+              "supported_template_types": [
+                "fullscreen"
+              ],
+              "supported_ad_formats": [
+                "vungle_mraid",
+                "third_party",
+                "third_party_playable"
+              ],
+              "header_bidding": true
+            },
+            {
+              "id": "5f6a468cd5ba35022aeace76",
+              "reference_id": "AREYOUS82694",
+              "is_auto_cached": false,
+              "is_incentivized": true,
+              "supported_template_types": [
+                "fullscreen"
+              ],
+              "supported_ad_formats": [
+                "vungle_mraid",
+                "third_party",
+                "third_party_playable"
+              ]
+            },
+            {
+              "id": "6038c3923f32a974dcad4942",
+              "reference_id": "DEFAULT020241",
+              "is_auto_cached": true,
+              "is_incentivized": true,
+              "supported_template_types": [
+                "fullscreen"
+              ],
+              "supported_ad_formats": [
+                "vungle_mraid",
+                "third_party",
+                "third_party_playable"
+              ],
+              "header_bidding": true
+            }
+          ],
+          "config": {
+            "refresh_time": 86400000
+          },
+          "will_play_ad": {
+            "enabled": false,
+            "request_timeout": 300
+          },
+          "playback": {
+            "buffer_timeout": 500
+          },
+          "viewability": {
+            "moat": true,
+            "om": true
+          },
+          "exception_reporting": true,
+          "logging": {
+            "enabled": false
+          },
+          "crash_report": {
+            "max_send_amount": 0,
+            "enabled": false,
+            "collect_filter": "*.vungle.com"
+          },
+          "vduid": "",
+          "gdpr": {
+            "is_country_data_protected": false,
+            "consent_title": "Personalized Ads",
+            "consent_message": "Ads are personalized. Denying would disable it",
+            "consent_message_version": "0.0",
+            "button_accept": "Accept",
+            "button_deny": "Deny"
+          },
+          "ri": {
+            "enabled": false
+          },
+          "vision": {
+            "enabled": false,
+            "aggregation_filters": [
+              "creative_details",
+              "campaign_details",
+              "advertiser_details"
+            ],
+            "aggregation_time_windows": [
+              1,
+              45
+            ],
+            "view_limit": {
+              "device": 1000,
+              "wifi": 100,
+              "mobile": 50
+            }
+          },
+          "session": {
+            "enabled": true,
+            "timeout": 900,
+            "limit": 0
+          },
+          "skadnetwork": {
+          },
+          "cache_bust": {
+            "enabled": true,
+            "interval": 3600
+          },
+          "ad_load_optimization": {
+            "enabled": false
+          }
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "get pub config from the Bastion service",
+      "providerState": "Test to get the config with a non-existing pub app",
+      "request": {
+        "method": "post",
+        "path": "/api/v5/config",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "cache-control": "no-cache",
+          "user-agent": "Vungle/6.11.0",
+          "X-Forwarded-For": "45.117.100.153",
+          "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
+          "X-VUNGLE-LANGUAGE": "ru",
+          "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
+          "Vungle-Version": "5.8"
+        },
+        "body": {
+          "app": {
+            "id": "123456",
+            "bundle": "com.vungle.ios-sdk-app.qa",
+            "ver": "14f1cf7"
+          },
+          "system": {
+            "cache": [
+
+            ]
+          },
+          "device": {
+            "make": "Apple",
+            "os": "ios",
+            "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "h": 2688,
+            "model": "x86_64",
+            "osv": "12.4",
+            "ext": {
+              "vungle": {
+                "ios": {
+                  "volume": 0.6000000238418579,
+                  "battery_state": "unknown",
+                  "idfa": "4423DD36-2738-46DC-84D1-02A47F95320C",
+                  "vduid": "",
+                  "battery_level": -1,
+                  "locale": "en_US",
+                  "connection_type": "wifi",
+                  "language": "en",
+                  "storage_bytes_available": 228426878976,
+                  "idfv": "C8360A3F-81C3-4DC5-99FD-B5B28A161A6D",
+                  "battery_saver_enabled": 0,
+                  "time_zone": "Asia/Shanghai"
+                }
+              }
+            },
+            "carrier": "",
+            "ifa": "V9SHDTQ68ELAHLH7LEFWFWNE9RBZW0H5JJK0",
+            "w": 1242,
+            "lmt": 0
+          },
+          "ext": {
+          },
+          "request": {
+            "skadnetwork": {
+              "plist_adnetwork_ids": [
+
+              ]
+            }
+          },
+          "user": {
+            "gdpr": {
+              "consent_timestamp": 1565346845,
+              "consent_status": "opted_in",
+              "consent_message_version": "publisher_version_v1.0",
+              "consent_source": "publisher"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
