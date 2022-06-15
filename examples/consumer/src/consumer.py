@@ -38,10 +38,10 @@ class ConfigConsumer(object):
 
 class Ads(object):
 
-    def __init__(self, placement_reference_id: str, ad_markup: dict):
+    def __init__(self, placement_reference_id: str, ad_markup: dict, sleep_code: str):
         self.placement_reference_id = placement_reference_id
         self.ad_markup = ad_markup
-
+        self.sleep_code = sleep_code
 
 class AdsConsumer(object):
 
@@ -49,19 +49,20 @@ class AdsConsumer(object):
 
         self.base_uri = base_uri
 
-    def request_ads(self, pub_app_id: str, placement_refer_id: str) -> Optional[Ads]:
+    def request_ads(self, req: dict, headers: dict) -> Optional[Ads]:
 
         uri = self.base_uri + "/api/v5/ads"
-        req = jaeger_v5_ios(pub_app_id, placement_refer_id)
 
-        r = requests.post(uri, json=req,
-                          headers=platform_headers(src_ip='45.117.100.153', rtb_selector='5fd21d91c80cb9051249a6b1'))
+        r = requests.post(uri, json=req, headers=headers)
 
         if r.status_code != 200:
             return None
 
         response_payload = r.json()
-        placement_reference_id = response_payload['ads'][0]['placement_reference_id']
         ad_markup = response_payload['ads'][0]['ad_markup']
+        placement_reference_id = response_payload['ads'][0]['placement_reference_id']
+        sleep_code = None
+        if 'sleep' in ad_markup:
+            sleep_code = ad_markup['sleep']
 
-        return Ads(placement_reference_id, ad_markup)
+        return Ads(placement_reference_id, ad_markup, sleep_code)

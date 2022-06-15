@@ -38,11 +38,11 @@ PACT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 @pytest.fixture
-def consumer() -> ConfigConsumer:
+def config_consumer() -> ConfigConsumer:
     return ConfigConsumer("http://{host}:{port}".format(host=PACT_MOCK_HOST, port=PACT_MOCK_PORT))
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="class")
 def pact(request):
     """Setup a Pact Consumer, which provides the Provider mock service. This
     will generate and optionally publish Pacts to the Pact Broker"""
@@ -65,26 +65,26 @@ def pact(request):
         # broker_token=PACT_BROKER_TOKEN,
     )
 
-    pact.start_service()
+    # pact.start_service()
 
     # Make sure the Pact mocked provider is stopped when we finish, otherwise
     # port 1234 may become blocked
-    atexit.register(pact.stop_service)
+    # atexit.register(pact.stop_service)
 
     yield pact
 
     # This will stop the Pact mock server, and if publish is True, submit Pacts
     # to the Pact Broker
-    pact.stop_service()
+    # pact.stop_service()
 
     # Given we have cleanly stopped the service, we do not want to re-submit the
     # Pacts to the Pact Broker again atexit, since the Broker may no longer be
     # available if it has been started using the --run-broker option, as it will
     # have been torn down at that point
-    pact.publish_to_broker = False
+    # pact.publish_to_broker = False
 
 
-def test_get_config_with_valid_pub_app(pact, consumer):
+def test_get_config_with_valid_pub_app(pact, config_consumer):
     # Define the Matcher; the expected structure and content of the response
     expected = expected_served_config_response()
     test_pub_app = '59786bc2a43b3a08620026b4'
@@ -104,7 +104,7 @@ def test_get_config_with_valid_pub_app(pact, consumer):
 
     with pact:
         # Perform the actual request
-        config = consumer.get_config(test_pub_app)
+        config = config_consumer.get_config(test_pub_app)
 
         # In this case the mock Provider will have returned a valid response
         assert config.ads_endpoint == "https://apiqa.vungle.com/api/v5/ads"
@@ -114,7 +114,7 @@ def test_get_config_with_valid_pub_app(pact, consumer):
         pact.verify()
 
 
-def test_get_config_with_non_existing_pub_app(pact, consumer):
+def test_get_config_with_non_existing_pub_app(pact, config_consumer):
     test_pub_app = '123456'
 
     # Define the expected behaviour of the Provider. This determines how the
@@ -129,7 +129,7 @@ def test_get_config_with_non_existing_pub_app(pact, consumer):
 
     with pact:
         # Perform the actual request
-        config = consumer.get_config(test_pub_app)
+        config = config_consumer.get_config(test_pub_app)
 
         # In this case, the mock Provider will have returned a 404 so the
         # consumer will have returned None
