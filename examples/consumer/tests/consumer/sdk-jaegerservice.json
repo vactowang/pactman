@@ -16,17 +16,17 @@
           "Accept": "application/json",
           "Content-Type": "application/json",
           "cache-control": "no-cache",
-          "user-agent": "Vungle/6.10.0",
+          "user-agent": "Vungle/6.11.0",
           "X-Forwarded-For": "45.117.100.153",
           "X-VUNGLE-BUNDLE-ID": "com.outfit7.mytalkingtomfree",
           "X-VUNGLE-LANGUAGE": "ru",
           "X-VUNGLE-TIMEZONE": "Asia/Shanghai",
           "Vungle-Version": "5.8",
-          "X-Vungle-RTB-ID": "5fd219d7c80cb9051249a6ab"
+          "X-Vungle-RTB-ID": "5fd21d91c80cb9051249a6b1"
         },
         "body": {
           "app": {
-            "id": "59786bc2a43b3a08620026b2",
+            "id": "59786bc2a43b3a08620026b1",
             "bundle": "com.vungle.ios-sdk-app.qa",
             "ver": "1.0.9"
           },
@@ -42,7 +42,7 @@
             "h": 1792,
             "w": 828,
             "model": "iPhone11,8",
-            "osv": "14.5",
+            "osv": "13",
             "ext": {
               "vungle": {
                 "ios": {
@@ -63,18 +63,19 @@
               }
             },
             "carrier": "T-Mobile",
-            "ifa": "4423DD36-2738-46DC-84D1-02A47F95320D",
+            "ifa": "USYBSR8675LCGQA5ITW47TQINVVHWR301YT6",
             "lmt": 0
           },
           "ext": {
           },
           "request": {
             "placements": [
-              "DEFAULT02022"
+              "DEFAULT02021"
             ],
+            "header_bidding": true,
             "skadnetwork": {
               "matched_adnetwork_ids": [
-                "test.ad.nw.001"
+
               ]
             }
           },
@@ -92,7 +93,7 @@
         "body": {
           "ads": [
             {
-              "placement_reference_id": "DEFAULT02022",
+              "placement_reference_id": "DEFAULT02021",
               "ad_markup": {
                 "id": "string",
                 "campaign": "string",
@@ -185,37 +186,7 @@
                 "ad_token": "string",
                 "requires_sideloading": true,
                 "timestamp": 1,
-                "attribution": {
-                  "method": "string",
-                  "skadnetwork": {
-                    "version": "string",
-                    "storekit": {
-                      "fidelity_type": 1,
-                      "version": "string",
-                      "ad_network_id": "string",
-                      "source_app_id": 1,
-                      "itunes_item_id": 1,
-                      "signature": "string",
-                      "campaign_id": 1,
-                      "nonce": "fc763eba-0905-41c5-a27f-3934ab26786c",
-                      "timestamp": 1
-                    },
-                    "viewthrough": {
-                      "ad_type": "string",
-                      "ad_description": "string",
-                      "ad_purchaser_name": "string",
-                      "fidelity_type": 1,
-                      "version": "string",
-                      "ad_network_id": "string",
-                      "source_app_id": 1,
-                      "itunes_item_id": 1,
-                      "signature": "string",
-                      "campaign_id": 1,
-                      "nonce": "fc763eba-0905-41c5-a27f-3934ab26786c",
-                      "timestamp": 1
-                    }
-                  }
-                }
+                "bid_token": "string"
               }
             }
           ]
@@ -312,44 +283,6 @@
             "match": "type"
           },
           "$.body.ads[0].ad_markup.timestamp": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.fidelity_type": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.source_app_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.itunes_item_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.campaign_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.nonce": {
-            "match": "regex",
-            "regex": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.storekit.timestamp": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.fidelity_type": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.source_app_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.itunes_item_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.campaign_id": {
-            "match": "type"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.nonce": {
-            "match": "regex",
-            "regex": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
-          },
-          "$.body.ads[0].ad_markup.attribution.skadnetwork.viewthrough.timestamp": {
             "match": "type"
           }
         }
