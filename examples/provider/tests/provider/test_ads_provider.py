@@ -16,9 +16,9 @@ PACT_BROKER_USERNAME = "pactbroker"
 PACT_BROKER_PASSWORD = "pactbroker"
 
 
-PROVIDER_HOST = "apiqa.vungle.com"
+PROVIDER_HOST = "adex.ads-qa.vungle.com"
 PROVIDER_PORT = 80
-PROVIDER_URL = f"http://{PROVIDER_HOST}:{PROVIDER_PORT}"
+PROVIDER_URL = f"https://{PROVIDER_HOST}:{PROVIDER_PORT}"
 
 
 @pytest.fixture
@@ -27,7 +27,7 @@ def broker_opts():
         "broker_username": PACT_BROKER_USERNAME,
         "broker_password": PACT_BROKER_PASSWORD,
         "broker_url": PACT_BROKER_URL,
-        "publish_version": "v1.216.0",
+        "publish_version": "v1.223.0",
         "publish_verification_results": True,
     }
 
